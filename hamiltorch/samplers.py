@@ -1153,7 +1153,7 @@ def define_model_log_prob(model, model_loss, x, y, params_flattened_list, params
         for weights, index, shape, dist in zip(model.parameters(), params_flattened_list, params_shape_list, dist_list):
             # weights.data = params[i_prev:index+i_prev].reshape(shape)
             w = params[i_prev:index+i_prev]
-            print(l_prior, dist.log_prob(w).sum())
+            print(l_prior, w)
             l_prior = dist.log_prob(w).sum() + l_prior
             i_prev += index
 
